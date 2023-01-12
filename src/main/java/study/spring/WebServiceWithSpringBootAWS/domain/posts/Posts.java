@@ -3,13 +3,14 @@ package study.spring.WebServiceWithSpringBootAWS.domain.posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import study.spring.WebServiceWithSpringBootAWS.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @Getter
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
