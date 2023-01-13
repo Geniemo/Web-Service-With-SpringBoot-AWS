@@ -64,4 +64,26 @@ class PostsRepositoryTest {
         assertThat(posts.getCreatedDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
     }
+
+    @Test
+    public void findAllOrderById() throws Exception {
+        // given
+        postsRepository.save(Posts.builder()
+                .title("posts1")
+                .content("content1")
+                .author("author1")
+                .build());
+        postsRepository.save(Posts.builder()
+                .title("posts2")
+                .content("content2")
+                .author("author2")
+                .build());
+
+        // when
+        List<Posts> postsList = postsRepository.findAllByOrderByIdDesc();
+
+        // then
+        Posts posts = postsList.get(0);
+        assertThat(posts.getTitle()).isEqualTo("posts2");
+    }
 }
