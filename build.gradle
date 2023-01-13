@@ -41,6 +41,9 @@ dependencies {
 	// p6spy 추가, 쿼리 파라미터 보기
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1'
 
+	// mustache 추가
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
