@@ -12,6 +12,9 @@ spring:
       hibernate:
         show_sql: true
 
+  profiles:
+    include: oauth
+
 # mustache 한글 깨짐 문제 해결
 server:
   servlet:
