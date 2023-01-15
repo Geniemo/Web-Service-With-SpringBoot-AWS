@@ -1,19 +1,24 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/h2_db/1.4.200/webservice
+    url: jdbc:h2:mem:testdb
     username: sa
     password:
     driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
 
   jpa:
-    hibernate:
-      ddl-auto: create
+#    hibernate:
+#      ddl-auto: create
     properties:
       hibernate:
         show_sql: true
-
   profiles:
     include: oauth
+
+  session:
+    store-type: jdbc
 
 # mustache 한글 깨짐 문제 해결
 server:
