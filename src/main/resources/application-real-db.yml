@@ -6,7 +6,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:maraidb://geniemo-free-dbinstance.cer7br3hdutx.ap-northeast-2.rds.amazonaws.com:3306/web_service_with_springboot_aws
+    url: jdbc:mariadb://geniemo-free-dbinstance.cer7br3hdutx.ap-northeast-2.rds.amazonaws.com:3306/web_service_with_springboot_aws
     username: geniemo
     password: qkr159357
     driver-class-name: org.mariadb.jdbc.Driver

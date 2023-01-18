@@ -5,6 +5,12 @@ spring:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect: org.hibernate.dialect.MariaDB106Dialect
   session:
     store-type: jdbc
+
+# mustache 한글 깨짐 문제 해결
+server:
+  servlet:
+    encoding:
+      force-response: true
