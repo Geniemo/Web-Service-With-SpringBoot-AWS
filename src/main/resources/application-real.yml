@@ -1,8 +1,4 @@
 spring:
-  config:
-    import:
-      - application-oauth.yml
-      - application-real-db.yml
   profiles:
     group:
       "real": "oauth,real-db"
