@@ -1,8 +1,11 @@
 spring:
+  config:
+    import:
+      - application-oauth.yml
+      - application-real-db.yml
   profiles:
-    include:
-      - oauth
-      - real-db
+    group:
+      "real": "oauth,real-db"
   jpa:
     properties:
       hibernate:

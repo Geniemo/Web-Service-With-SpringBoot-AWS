@@ -1,4 +1,7 @@
 spring:
+  config:
+    activate:
+      on-profile: "real-db"
   jpa:
     hibernate:
       ddl-auto: none
