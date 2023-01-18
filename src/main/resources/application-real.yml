@@ -8,9 +8,3 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   session:
     store-type: jdbc
-
-# mustache 한글 깨짐 문제 해결
-server:
-  servlet:
-    encoding:
-      force-response: true

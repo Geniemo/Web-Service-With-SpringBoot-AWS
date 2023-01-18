@@ -1,26 +1,3 @@
-spring:
-  profiles:
-    group:
-      "dev": "oauth"
-  datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-  h2:
-    console:
-      enabled: true
-
-  jpa:
-#    hibernate:
-#      ddl-auto: create
-    properties:
-      hibernate:
-        show_sql: true
-
-  session:
-    store-type: jdbc
-
 # mustache 한글 깨짐 문제 해결
 server:
   servlet:
