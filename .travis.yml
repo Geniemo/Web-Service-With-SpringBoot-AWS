@@ -14,11 +14,27 @@ cache:
 
 script: './gradlew clean build'
 
+before_install:
+  - chmod +x gradlew
+
+before_deploy:
+  - zip -r Web-Service-With-SpringBoot-AWS *
+  - mkdir -p deploy
+  - mv Web-Service-With-SpringBoot-AWS.zip deploy/Web-Service-With-SpringBoot-AWS.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings 설정 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings 설정 값
+    bucket: geniemo-free-s3 # S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근을 private 으로
+    local_dir: deploy # before_deploy 에서 생성한 디렉토리
+    wait-until-deployed: true
+
 # CI 실행 완료 시 메일로 알림
 notifications:
   email:
     recipients:
       - 'kor98won@gmail.com'
-
-before_install:
-  - chmod +x gradlew
